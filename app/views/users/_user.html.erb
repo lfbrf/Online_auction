@@ -1,0 +1,8 @@
+
+<td>
+
+  <%= link_to user.email, user %>
+</td>
+<td>
+  <%= link_to("Deletar usuario", user_path(user), :data => { :confirm => "Voce tem certeza disso? essa ação não poderá ser desfeita!" }, :method => :delete, :class => 'button-xs') unless user == current_user %>
+</td>

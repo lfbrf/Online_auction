@@ -1,0 +1,6 @@
+<h3>User</h3>
+<p>Name: <%= @user.first_name if @user.first_name %></p>
+<p>Sobrenome: <%= @user.last_name if @user.last_name %></p>
+<p>Cidade: <%= @user.city if @user.city %></p>
+<p>Email: <%= @user.email if @user.email %></p>
+<%= link_to 'Voltar', :back %>
