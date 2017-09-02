@@ -13,3 +13,5 @@ First clone the repo, and them change your informations of DB in config/database
   Second run rake db:seed, this wil generate the default admin to app, (admin@admin.com and pass admin123) you can change this in  
    db/seeds.rb .
 And last run rails s
+## See Working
+To see this web site runing visit this page https://onlineauctionutfpr.herokuapp.com/
