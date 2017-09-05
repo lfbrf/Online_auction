@@ -8,6 +8,15 @@ Bundler.require(*Rails.groups)
 
 module RailsDeviseRoles
   class Application < Rails::Application
+    config.time_zone = 'Brasilia'
+
+ 
+
+     config.i18n.enforce_available_locales = false
+
+     config.i18n.available_locales = ["pt-BR"]
+
+     config.i18n.default_locale = :'pt-BR'
 
     config.generators do |g|
       g.test_framework :rspec,

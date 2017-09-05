@@ -24,7 +24,7 @@
     </div>
     <div class="form-group is-required">
       <%= f.label :Email %>
-      <%= f.email_field :email,class: 'form-control', required:true   %>
+      <%= f.email_field :email,class: 'form-control', required:true, :id => 'free-user'   %>
     </div>
     <div class="form-group is-required">
       <%= f.label :Senha %>
@@ -34,6 +34,8 @@
       <%= f.label :Repita_a_senha %>
       <%= f.password_field :password_confirmation,  class: 'form-control', required:true  %>
     </div>
-     <%= f.submit 'Registre-se', :class => 'button right' %>
+     <%= f.submit 'Registre-se', :class => 'button right', :id => 'continue' %>
+     
   <% end %>
+ 
 </div>

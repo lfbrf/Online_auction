@@ -17,6 +17,7 @@ validates_presence_of    :first_name, :on=>:create
 validates_presence_of    :last_name, :on=>:create
 validates_presence_of    :city, :on=>:create
 validates_presence_of    :email, :on=>:create
+validates :email, :uniqueness => { :case_sensitive => false } # validate if email is unique.
 validates_format_of :first_name, :with => /\A^[A-Z][-a-zA-Z]+$\Z/
 validates_format_of :last_name, :with => /\A^[A-Z][-a-zA-Z]+$\Z/
 validates_format_of :city, :with => /\A^[A-Z][-a-zA-Z]+$\Z/

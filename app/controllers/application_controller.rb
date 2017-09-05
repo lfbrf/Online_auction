@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
 
   end
-  
+  def create
+        redirect_to new_user_session_path, alert: "Invalid email or password"
+    end  
 
 end

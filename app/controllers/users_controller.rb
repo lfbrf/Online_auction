@@ -5,12 +5,18 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
+  def create
+    if User.exists?( email: @invitation.recipient_email )
+        redirect_to users_path, :alert => "Unable to register user."
+    else
+      render new_scoreboard_invitation_path
+    end  
+  end
   def show
     @user = User.find(params[:id])
     unless current_user.admin?
       unless @user == current_user
-        redirect_to root_path, :alert => "Access denied."
+        redirect_to root_path, :alert => "Bem vindo."
       end
     end
   end
