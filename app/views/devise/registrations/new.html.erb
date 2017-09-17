@@ -4,15 +4,15 @@
     <%= devise_error_messages! %>
     <div class="form-group is-required">
       <%= f.label :Nome  %>
-      <%= f.text_field :first_name, :autofocus => true, required:true ,  class: 'form-control ' %>
+      <%= f.text_field :first_name, :autofocus => true,   class: 'form-control ' %>
     </div>
     <div class="form-group is-required">
       <%= f.label :Sobrenome %>
-      <%= f.text_field :last_name, :autofocus => true, required:true ,  class: 'form-control' %>
+      <%= f.text_field :last_name, :autofocus => true,   class: 'form-control' %>
     </div> 
     <div class="form-group is-required">
       <%= f.label :Cidade %>
-      <%= f.text_field :city, :autofocus => true, required:true ,   class: 'form-control' %>
+      <%= f.text_field :city, :autofocus => true,    class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :Endereco %>
@@ -24,15 +24,15 @@
     </div>
     <div class="form-group is-required">
       <%= f.label :Email %>
-      <%= f.email_field :email,class: 'form-control', required:true, :id => 'free-user'   %>
+      <%= f.email_field :email,class: 'form-control',  :id => 'free-user'   %>
     </div>
     <div class="form-group is-required">
       <%= f.label :Senha %>
-      <%= f.password_field :password,class: 'form-control', required:true   %>
+      <%= f.password_field :password,class: 'form-control'    %>
     </div>
     <div class="form-group is-required">
       <%= f.label :Repita_a_senha %>
-      <%= f.password_field :password_confirmation,  class: 'form-control', required:true  %>
+      <%= f.password_field :password_confirmation,  class: 'form-control' %>
     </div>
      <%= f.submit 'Registre-se', :class => 'button right', :id => 'continue' %>
      
