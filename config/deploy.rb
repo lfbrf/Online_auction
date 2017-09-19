@@ -7,7 +7,7 @@ set :application,     'robson.tsi.pro.br'
 set :branch,          'production'
 
 set :user,            'deployer'
-set :repo_url,        'git@github.com/lfbrf/online-auction.git'
+set :repo_url,        'git@github.com:lfbrf/online-auction.git'
 set :keep_releases,   3
 
 set :puma_threads,    [4, 16] # Min and Max threads per worker
