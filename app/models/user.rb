@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable #, :validatable  to use custom validate this was comented
+         :recoverable, :rememberable, :trackable, :confirmable #, :validatable  to use custom validate this was comented
          validates_presence_of    :password, :on=>:create
   validates_confirmation_of    :password, :on=>:create
   validates_length_of    :password, :within => Devise.password_length, :allow_blank => true
