@@ -17,7 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: online_auction
+  database: online_auction_production
   pool: 5
   username: postgres
   password: postgres
