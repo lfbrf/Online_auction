@@ -9,9 +9,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
- gem 'rails-i18n', '~> 5.0.0'
- gem 'jquery-validation-rails'
+gem 'rails-i18n', '~> 5.0.0'
+gem 'jquery-validation-rails'
 gem "rails_12factor", group: :production
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -25,16 +26,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
- gem 'capistrano',         require: false
-    gem 'capistrano-rvm',     require: false
-    gem 'capistrano-rails',   require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
-    gem 'capistrano-rails-db',require: false
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+  gem 'capistrano-rails-db',require: false
 end
 group :development, :test do
   gem 'factory_girl_rails'
