@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       redirect_to users_path, :alert => "Unable to update user."
     end
   end
-
+ 
   def destroy
     user = User.find(params[:id])
     user.destroy
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def admin_only
     unless current_user.admin?
-      redirect_to root_path, :alert => "Access denied."
+      redirect_to root_path, :alert => "Acesso Negado."
     end
   end
 
