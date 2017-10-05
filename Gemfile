@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
 ruby '2.3.1'
 gem 'event-calendar', :require => 'event_calendar'
-=======
-ruby '2.4.1'
->>>>>>> a93ffcb6a3528990901ec17fc4f1cffd008abc3e
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg'
 gem 'puma', '~> 3.0'
@@ -16,23 +12,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'jquery-validation-rails'
-<<<<<<< HEAD
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem "rails_12factor", group: :production
-=======
-gem "rails_12factor", group: :production
-
-group :development, :test do
-  gem 'byebug', platform: :mri
-end
-group :development do
-  gem 'web-console'
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
->>>>>>> a93ffcb6a3528990901ec17fc4f1cffd008abc3e
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
@@ -42,7 +24,12 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'simple_form'
 gem 'mini_magick', '~> 4.3'
 
+
 group :development do
+  gem 'web-console'
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -63,7 +50,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'byebug', platform: :mri 
+  gem 'byebug', platform: :mri
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
