@@ -1,0 +1,5 @@
+<%= @auction.begin_date %>
+<br>
+<%= @auction.end_date %>
+
+<%= collection_select(:product, :product_id, Product.all, :id, :name) %>

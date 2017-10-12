@@ -1,0 +1,32 @@
+ 
+<div class="column md8">
+  <h3>Cadastrar Leilao</h3>
+
+  
+  <%= simple_form_for @auction, :html => {:class => 'form-horizontal' } do |f| %>
+  </br>
+     <%= f.label :Titulo %>
+     <%= f.text_field :title%>
+  </br>
+  </br>
+ <%= f.label :Produto  %>
+  <%= collection_select(:product, :product_id, Product.all, :id, :name, {:prompt => 'Por favor Selecione um Produto'}) %>
+  </br>
+  </br>
+
+    <%= f.label :Imagem  %>
+    <%= f.file_field :image  ,{ :style => "float : right" }%>
+    </br>
+    </br>
+    </br>
+    <%= f.input :begin_date %>
+    </br>
+    <%= f.input :end_date %>
+   
+     </br>
+      <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
+    </br>
+  <% end %>
+</div>
+
+    

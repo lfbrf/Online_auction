@@ -1,0 +1,14 @@
+<div class="authform">
+    <h3>Leiloes</h3>
+   <h1> Pagina de leilos</h1>
+</div>
+
+<% @auctions.each do |auction| %>
+<%= auction.begin_date %>
+<br>
+<%= auction.end_date %>
+<br>
+<br>
+
+<%= image_tag(auction.image.url) %>
+<% end %>      

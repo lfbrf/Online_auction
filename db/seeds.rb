@@ -5,11 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = User.new
-user.email = 'admin@admin.com'
-user.password = 'admin123'
-user.city = 'Guarapuava'
-user.first_name = 'Admin'
-user.last_name = 'Surname'
- user.admin!
-user.save!
+# user = User.new
+# user.email = 'onlineauctionutfpr@gmail.com'
+# user.password = 'admin123'
+# user.city = 'Guarapuava'
+# user.first_name = 'Admin'
+# user.last_name = 'Surname'
+# user.admin!
+# user.save!
+
+ User.create_with(password: 'admin123', password_confirmation: 'admin123' , city: 'Guarapuava',
+ 				  first_name: 'Admin', last_name: 'Surname', role: :admin).find_or_create_by(email: 'onlineauctionutfpr@gmail.com')
