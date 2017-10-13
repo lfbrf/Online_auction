@@ -24,11 +24,14 @@ ActiveRecord::Schema.define(version: 20171011221152) do
   end
 
   create_table "auctions", force: :cascade do |t|
-    t.datetime "begin_date"
-    t.datetime "end_date"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "product_name"
+    t.string   "number"
+    t.string   "price"
+    t.string   "end_time"
+    t.string   "description"
+    t.string   "status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "image"
   end
 

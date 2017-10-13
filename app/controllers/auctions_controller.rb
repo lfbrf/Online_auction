@@ -8,33 +8,33 @@ class AuctionsController < ApplicationController
 
   def new
    @auction = Auction.new
-  end
+ end
 
-  def show
+ def show
    @auction = Auction.find(params[:id]) 
-  end
+ end
 
-  def create 
-    @auction = Auction.new(auction_params)
-    
-   if @auction.save
-      redirect_to @auction
-   else
-      render :new   
-    end
+ def create 
+  @auction = Auction.new(auction_params)
+  
+  if @auction.save
+    redirect_to @auction
+  else
+    render :new   
   end
+end
 
 private
 
-  def auction_params
-    params.require(:auction).permit(:end_date, :begin_date, :image, :title)
-   
+def auction_params
+  params.require(:auction).permit(:end_date, :begin_date, :image, :title)
+  
+end
+
+def admin_only
+  unless current_user.admin?
+    redirect_to root_path, :alert => "Acesso Negado."
   end
- 
-  def admin_only
-    unless current_user.admin?
-      redirect_to root_path, :alert => "Acesso Negado."
-    end
-  end
+end
 end 
 

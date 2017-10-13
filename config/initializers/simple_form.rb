@@ -12,6 +12,7 @@ SimpleForm.setup do |config|
     # given input by passing: `f.input EXTENSION_NAME => false`.
     # You can make any of these extensions optional by
     # renaming `b.use` to `b.optional`.
+
     # Determines whether to use HTML5 (:email, :url, ...)
     # and required attributes
     b.use :html5
@@ -100,13 +101,11 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-   config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
+  # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil
 
-config.label_class = 'col-lg-2 control-label'
-config.form_class = "simple_form form-horizontal"
   # You can define the default class to be used on forms. Can be overriden
   # with `html: { :class }`. Defaulting to none.
   # config.default_form_class = nil
@@ -122,7 +121,8 @@ config.form_class = "simple_form form-horizontal"
   # in this configuration, which is recommended due to some quirks from different browsers.
   # To stop SimpleForm from generating the novalidate option, enabling the HTML5 validations,
   # change this configuration to true.
-  config.browser_validations = true
+  config.browser_validations = false
+
   # Collection of methods to detect if a file type was given.
   # config.file_methods = [ :mounted_as, :file?, :public_filename ]
 
