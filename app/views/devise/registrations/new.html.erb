@@ -1,41 +1,53 @@
-<div class="authform">
+
+<div class="container">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Cadastrar</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group is-required">
+  <h3>Cadastrar conta</h3>
+  <%= devise_error_messages! %>
+  <div class="row">
+    <div class="form-group is-required col-md-3">
       <%= f.label :Nome  %>
       <%= f.text_field :first_name, :autofocus => true,   class: 'form-control ' %>
     </div>
-    <div class="form-group is-required">
+    <div class="form-group is-required col-md-5">
       <%= f.label :Sobrenome %>
       <%= f.text_field :last_name, :autofocus => true,   class: 'form-control' %>
     </div> 
-    <div class="form-group is-required">
-      <%= f.label :Cidade %>
-      <%= f.text_field :city, :autofocus => true,    class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :Endereco %>
-      <%= f.text_field :address, :autofocus => true,  class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :cpf %>
-      <%= f.text_field :cpf, :autofocus => true,  class: 'form-control' %>
-    </div>
-    <div class="form-group is-required">
+  </div>
+  <div class="row">
+  <div class="form-group col-md-3">
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf, :autofocus => true,  class: 'form-control' %>
+  </div>
+  <div class="form-group is-required col-md-5">
+    <%= f.label :Cidade %>
+    <%= f.text_field :city, :autofocus => true,    class: 'form-control' %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group col-md-8">
+    <%= f.label :Endereco %>
+    <%= f.text_field :address, :autofocus => true,  class: 'form-control' %>
+  </div>
+  </div>
+  <div class="row">
+    <div class="form-group is-required col-md-8">
       <%= f.label :Email %>
       <%= f.email_field :email,class: 'form-control',  :id => 'free-user'   %>
     </div>
-    <div class="form-group is-required">
+  </div>
+  <div class="row">
+    <div class="form-group is-required col-md-4">
       <%= f.label :Senha %>
       <%= f.password_field :password,class: 'form-control'    %>
     </div>
-    <div class="form-group is-required">
+    <div class="form-group is-required col-md-4">
       <%= f.label :Repita_a_senha %>
       <%= f.password_field :password_confirmation,  class: 'form-control' %>
     </div>
-     <%= f.submit 'Registre-se', :class => 'button right', :id => 'continue' %>
-     
+  </div>
+  <div class="row">
+  <%= f.submit 'Registre-se', :class => 'btn btn-primary col-md-8', :id => 'continue' %>
+  </div>
   <% end %>
- <%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 </div>

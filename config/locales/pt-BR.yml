@@ -59,7 +59,7 @@ pt-BR:
   errors:
     messages:
       already_confirmed: "já foi confirmado"
-      confirmation_period_expired: "precisa ser confirmada em até %{period}, por favor, solicite uma nova"
+      confirmation_period_expired: "Precisa ser confirmada em até %{period}, por favor, solicite uma nova"
       expired: "expirou, por favor, solicite uma nova"
       not_found: "não encontrado"
       not_locked: "não foi bloqueado"
