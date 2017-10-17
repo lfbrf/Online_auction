@@ -28,7 +28,7 @@ private
 
 def auction_params
   params.require(:auction).permit(:end_date, :begin_date, :image, :title)
-  
+  params.require(:auction).permit(:end_date, :begin_date, :image, :title, tasks_attributes: [:id, :_destroy, :todo_list_id, :name, :completed, :due])
 end
 
 def admin_only

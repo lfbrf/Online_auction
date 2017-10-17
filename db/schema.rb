@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011221152) do
+ActiveRecord::Schema.define(version: 20171017030900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,11 @@ ActiveRecord::Schema.define(version: 20171011221152) do
   end
 
   create_table "auctions", force: :cascade do |t|
-    t.string   "product_name"
-    t.string   "number"
-    t.string   "price"
-    t.string   "end_time"
-    t.string   "description"
-    t.string   "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "begin_date"
+    t.datetime "end_date"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "image"
   end
 
@@ -40,6 +37,16 @@ ActiveRecord::Schema.define(version: 20171011221152) do
     t.decimal  "price",      precision: 7, scale: 2
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "auction_id"
+    t.string   "name"
+    t.boolean  "completed"
+    t.date     "due"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auction_id"], name: "index_tasks_on_auction_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,4 +79,5 @@ ActiveRecord::Schema.define(version: 20171011221152) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "tasks", "auctions"
 end

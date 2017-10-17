@@ -7,7 +7,10 @@ pt-BR:
         first_name: "Nome" 
         last_name: "Sobrenome"
         city: "Cidade"
-        password: "Senha"  
+        password: "Senha"
+      auction:
+        begin_date: "Data de Inicio"
+        end_date: "Data de Encerramento"
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
