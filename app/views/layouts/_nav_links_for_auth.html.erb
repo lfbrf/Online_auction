@@ -1,14 +1,15 @@
 <% if user_signed_in? %>
-  <li><%= link_to 'Editar Conta', edit_user_registration_path %></li>
-  <li><%= link_to 'Sair', destroy_user_session_path, :method=>'delete' %></li>
+	<li><%= link_to 'Editar Conta', edit_user_registration_path %></li>
+  	<li><%= link_to 'Sair', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-  <li><%= link_to 'Cadastrar-se', new_user_registration_path %></li>
+  	<li><%= link_to 'Login', new_user_session_path %></li>
+  	<li><%= link_to 'Cadastrar-se', new_user_registration_path %></li>
 <% end %>
+
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Usuarios', users_path %></li>
-    <li><%= link_to("Cadastrar Leilao", new_auction_path) %></li> 
-     <li><%= link_to("Cadastrar Produto", new_product_path) %></li> 
+    	<li><%= link_to 'Usuarios', users_path %></li>
+    	<li><%= link_to("Cadastrar Leilao", new_auction_path) %></li> 
+    	<li><%= link_to("Cadastrar Produto", new_product_path) %></li> 
   <% end %>
 <% end %>
