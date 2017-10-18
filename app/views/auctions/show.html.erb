@@ -1,5 +1,11 @@
-<%= @auction.begin_date %>
 <br>
-<%= @auction.end_date %>
+<%= @auction.title %>
+<br>
+<%= I18n.l @auction.begin_date %>
+<br>
+<%= I18n.l @auction.end_date %>
 
-<%= collection_select(:product, :product_id, Product.all, :id, :name) %>
+<h1>Produtos</h1>
+<% @auction.products.each do |product| %>
+ <%= product.name %>
+<% end %>
