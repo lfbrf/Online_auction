@@ -1,20 +1,21 @@
-
 <div class="container">
   <h3>Cadastrar Leilao</h3>
-
   <%= simple_form_for @auction, :html => {:class => 'form-horizontal' } do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :image %>
+    <%= f.input :begin_date %>
+    <%= f.input :end_date %>
+    <%= f.association :products, as: :check_boxes,label_method: :name  %>
+    <%=collection_select(:products, :product_id, Product.all, :id, :name, prompt: true)  %> 
 
-    <div class="form-inputs">
-      <%= f.input :title %>
-      <%= f.input :image %>
-      <%= f.input :begin_date %>
-      <%= f.input :end_date %>
-      <%= f.association :products, as: :check_boxes,label_method: :name  %>
-    </div>
+   <%= f.input :name, as: :search, data: 
+  {autocomplete_source: products_path} %>
 
-    <div class="form-inputs">
-      <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
-    </div>
-
+  </div>
+  <div class="form-inputs">
+    <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
+  </div>
   <% end %>
 </div>
+ 

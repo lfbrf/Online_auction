@@ -2,7 +2,7 @@ class AuctionsController < ApplicationController
   before_action :admin_only
 
   def index
-    @auctions = Auction.all()
+    @auctions = Auction.all
   end
 
   def new

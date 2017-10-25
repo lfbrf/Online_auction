@@ -13,15 +13,18 @@
 
   <% @auctions.each do |auction| %>
 
-    <tr>
-      <td style="padding:15px 15px 0 15px;"><%=  auction.begin_date %></td>
-      <td style="padding:15px 15px 0 15px;"><%= auction.end_date %></td>
-      <td style="padding:15px 15px 0 15px;"><%= image_tag(auction.image.url(:medium)) %></td>
-      
-          
-      </td>
-    </tr>
+  <tr>
+    <td style="padding:15px 15px 0 15px;"><%=  auction.begin_date %></td>
+    <td style="padding:15px 15px 0 15px;"><%= auction.end_date %></td>
+    <td style="padding:15px 15px 0 15px;"><%= image_tag(auction.image.url(:medium)) %></td>
+    <td style="padding:15px 15px 0 15px;">
+      <% auction.products.each do |product| %>
+      <%= product.name %>
+      <% end %>
+    </td>
+  </td>
+</tr>
 
-  <% end %>      
+<% end %>      
 </table>
 </div>
