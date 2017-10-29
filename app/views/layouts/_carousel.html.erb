@@ -17,12 +17,14 @@
     
     <% @auctions.each do |auction| %>
     <div class="item">
-     <%= image_tag(auction.image.url(:big)) %>
+     <%= image_tag(auction.image.url(:medium)) %>
+       <div class="carousel-caption">
+        <h3><%= auction.title %> </h3>
+    </div>
    </div>
+  
    <%end%>
-   <div class="item">
-    <img src="http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg" alt="New York">
-  </div>
+
 </div>
 
 <!-- Left and right controls -->

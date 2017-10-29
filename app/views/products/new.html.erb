@@ -4,6 +4,25 @@
 
   
   <%= simple_form_for @product, :html => {:class => 'form-horizontal' } do |f| %>
+  <% if @product.errors.any? %>
+  <div id="error_explanation">
+      <div class="alert alert-danger">
+      The form contains <%= pluralize(@product.errors.count, "error") %>.
+    </div>
+    <ul> 
+
+    <% @product.errors.full_messages.each do |message| %>
+
+      <li> <%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+  <% end %>
+  <% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+
   </br>
      <%= f.label :Nome %>
      <%= f.text_field :name%>
@@ -11,10 +30,21 @@
   </br>
      <%= f.label :Preco %>
      <%= f.text_field :price%>
+  </br>  
+  </br> 
+     <%= f.label :Estado %>
+     <%= f.text_field :state%>
   </br>
+    </br>
+     <%= f.label :Descricao %>
+     <%= f.text_field :description%>
+  </br>
+  <%= f.file_field :images, multiple: true %>
       <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
     </br>
-  <% end %>
-</div>
 
-     
+
+  <% end %>
+</div> 
+
+      

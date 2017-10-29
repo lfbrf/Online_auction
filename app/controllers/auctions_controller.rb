@@ -26,7 +26,7 @@ class AuctionsController < ApplicationController
   private
 
   def auction_params
-    params.require(:auction).permit(:end_date, :begin_date, :image, :title, {product_ids: []})
+    params.require(:auction).permit(:end_date, :begin_date, :image, :title, {product_ids: []} )
   end
 
   def admin_only

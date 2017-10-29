@@ -1,21 +1,53 @@
+  <script>
+    $(document).ready(function() { $("#products_product_id").select2(); });
+  
+  </script>
+
 <div class="container">
   <h3>Cadastrar Leilao</h3>
   <%= simple_form_for @auction, :html => {:class => 'form-horizontal' } do |f| %>
   <div class="form-inputs">
-    <%= f.input :title %>
+    <%= f.input :title  %>
     <%= f.input :image %>
     <%= f.input :begin_date %>
     <%= f.input :end_date %>
+    <!--
     <%= f.association :products, as: :check_boxes,label_method: :name  %>
-    <%=collection_select(:products, :product_id, Product.all, :id, :name, prompt: true)  %> 
+   
+  
 
-   <%= f.input :name, as: :search, data: 
-  {autocomplete_source: products_path} %>
-
+   <%=f.collection_select(:products,  Product.all, :id , :name, prompt: true)%> -->
+ <div id="groups">
+    <div class='more_group' id="auction_product_ids_0">      
+             <%=  collection_select(:auction, :product_ids, Product.all, :id , :name, {:multiple => true}, :name => "auction[product_ids][]", :id => "auction_product_ids_0")%>
+        <input id="auction_product_ids_0_id" name="pauction_product_ids_0_id" type="hidden" value="6" />
   </div>
-  <div class="form-inputs">
+</div>
+ <%= button_tag "Adicionar novo", :type => 'button', id: "addnew" %>
+  </div>
+  <div class="form-inputs" style="padding-top: 100px;">
     <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
   </div>
   <% end %>
 </div>
- 
+
+
+<script type="text/javascript">
+  $('#addnew').click(function (event) {
+var newdiv = $(".more_group:last").clone();
+    var newid = Number(newdiv.attr('id').replace(/auction_product_ids_(\d+)/, "$1")) + 1;
+    
+    newdiv.attr('id', "auction_product_ids_" + newid)
+    
+    $.each(newdiv.find(":input"), function() {
+       var thisname = $(this).attr('id');
+       thisname = thisname.replace(/\d+/, newid);
+       
+       $(this).attr('id', thisname);
+       $(this).val('');
+    });
+
+    $("#groups").append(newdiv);
+});
+</script>
+

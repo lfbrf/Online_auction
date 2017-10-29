@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     user.first_name='nome'
     user.last_name='sobrenome'
     user.city="guarapuava"
-
+ 
     expect(user).to be_invalid
     expect(user.errors.size).to eq(3)
   end
@@ -34,10 +34,7 @@ RSpec.describe User, type: :model do
     expect(user.reload.role).to eq("admin")
   end
  
-  it "should validate role be admin or user" do
-    user = create(:user)
-    expect{ user.role=:vip }.to raise_error(ArgumentError)
-  end
+
 
   #it { expect(user).to ensure_inclusion_of(:role).in_array(['user', 'admin']) }
 end

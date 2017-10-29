@@ -1,0 +1,27 @@
+
+<div class="authform ">
+  <h1>Leilões</h1>
+  <h3> Leilões disponíveis</h3>
+</div>
+
+<table align="center">
+  <tr>
+    <th style="padding:15px 15px 0 15px;">Nome</th>
+    <th style="padding:15px 15px 0 15px;">Preco</th>
+    <th style="padding:15px 15px 0 15px;">Imagens</th>
+  
+  </tr>
+
+ <% @products.each do |product| %>
+
+  <tr>
+    <td style="padding:15px 15px 0 15px;"><%= product.name %></td>
+    <td style="padding:15px 15px 0 15px;"><%= product.price %></td>
+    <% product.images.each do |image| %>
+    <td><%= image_tag(image.url(:thumb)) %></td>
+    <% end %>      
+</tr>
+
+<% end %>      
+</table>
+</div>
