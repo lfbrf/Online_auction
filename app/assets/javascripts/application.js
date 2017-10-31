@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require select2
+//= require select2_locale_pt-BR
+
 $(document).on('turbolinks:load', function() {
 
   $('form').on('click', '.remove_record', function(event) {

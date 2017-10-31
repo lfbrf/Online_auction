@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
+
 ruby '2.4.1'
+
+gem 'select2-rails'
+
 gem 'event-calendar', :require => 'event_calendar'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg'
@@ -21,6 +25,7 @@ gem 'high_voltage'
 gem 'carrierwave'
 gem 'simple_form'
 gem 'mini_magick', '~> 4.3'
+gem 'thin'
 
 group :development do
   gem 'web-console'

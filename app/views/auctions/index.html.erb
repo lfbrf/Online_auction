@@ -1,23 +1,29 @@
+
 <div class="authform ">
-    <h1>Leilões</h1>
-   <h3> Leilões disponíveis</h3>
+  <h1>Leilões</h1>
+  <h3> Leilões disponíveis</h3>
 </div>
+
 <table align="center">
   <tr>
-    
     <th style="padding:15px 15px 0 15px;">Data de comeco</th>
     <th style="padding:15px 15px 0 15px;">Data de fim</th>
     <th style="padding:15px 15px 0 15px;">Imagem</th>
+    <th style="padding:15px 15px 0 15px;">Produtos</th>
   </tr>
- 
-<% @auctions.each do |auction| %>
 
+  <% @auctions.each do |auction| %>
 
-
-<tr>
+  <tr>
     <td style="padding:15px 15px 0 15px;"><%=  auction.begin_date %></td>
     <td style="padding:15px 15px 0 15px;"><%= auction.end_date %></td>
     <td style="padding:15px 15px 0 15px;"><%= image_tag(auction.image.url(:medium)) %></td>
+    <td style="padding:15px 15px 0 15px;">
+      <% auction.products.each do |product| %>
+      <%= product.name %>
+      <% end %>
+    </td>
+  </td>
 </tr>
 
 <% end %>      
