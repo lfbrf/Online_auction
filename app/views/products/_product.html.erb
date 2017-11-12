@@ -1,20 +1,16 @@
-<div class="authform ">
-  <h2>Produtos</h2>  
-</div>
-
 
 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
     <div class="card">
-        <%= image_tag(@product.images.first.url(:medium), class: "card-img-top ")%>
-        <div class="card-block">
-            <h4 class="card-title mt-3"><%= @product.name %></h4>
+        <%= image_tag(product.images.first.url(:medium), class: "card-img-top ")%>
+        
+            <h4 class="card-title mt-3"><%= product.name %></h4>
             <div class="meta">
                 <a>Descrição</a>
             </div>
             <div class="card-text">
-                <p><%= @product.description %>.</p>
+                <p><%= product.description %>.</p>
                 <hr>
-                <strong>Preço: </strong><%= @product.price %>
+                <strong>Preço: </strong><%= product.price %>
             </div>
         </div>
         <div class="card-footer">
