@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :auctions
   resources :products
   resources :auction_products
+  resources :visitors
 end

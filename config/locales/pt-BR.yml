@@ -11,6 +11,10 @@ pt-BR:
       auction:
         begin_date: "Data de Inicio"
         end_date: "Data de Encerramento"
+      contact:
+        name: "Nome"
+        subject: "Assunto"
+        message: "Mensagem"
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."

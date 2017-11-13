@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
 	<div class="card">
-		<h4 class="card-title"><%=@auction.title %></h4>
+		<h4 class="card-title">Título</h4>
 	    <%= image_tag(@auction.image.url(:medium), class: "card-img-top") %>
 	    <div class="card-block">
 	        
@@ -12,10 +12,5 @@
 	            <span><i class=""></i>75 Itens</span>
 	        </div>
 	    </div>
-	    <div class="card-footer">
-	    	
-	    	<%= link_to "Editar", edit_auction_path(@auction), :class => 'button-xs' %>
-	         <%= link_to("Deletar Leilao", auction_path(@auction), :method => :delete, :class => 'button-xs') %>
-	    </div>
 	</div>
-</div> 
+</div>

@@ -1,6 +1,6 @@
  
 <div class="column md8">
-  <h3>Cadastrar Leilao</h3>
+  <h3>Editar Leilao</h3>
 
   
   <%= simple_form_for @product, :html => {:class => 'form-horizontal' } do |f| %>
@@ -40,7 +40,7 @@
      <%= f.text_field :description, as: :text %>
   </br>
   <%= f.file_field :images, multiple: true %>
-      <%= f.button :submit, 'Cadastrar', :class=> "btn btn-primary" %>
+      <%= f.button :submit, 'Atualizar', :class=> "btn btn-primary" %>
     </br>
 
 

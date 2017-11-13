@@ -13,6 +13,36 @@
 </div>
 
 
+<% @auctions.each do |auction| %>
+<div class="col-sm-6 col-md-4 col-lg-3 mt-4" style= "height: 600px; float: left !importnat; ">
+  <div class="card" >
+    <h4 class="card-title"> <%= auction.title%></h4>
+    <%= link_to  auction_path(@auction, :id=> auction.id) do %>
+      <%= image_tag(auction.image.url(:medium), class: "card-img-top") %>
+    <% end %>   
+      <div class="card-block">
+           
+           
+          <div class="card-text">
+         
+          
+                <p> Início: <%= auction.begin_date%> </p>
+              <p> Fim: <%= auction.begin_date%> </p>
+              <p><% auction.products.each do |product| %>
+              <%= product.name  %>,
+          
+              <% end %></p>
+          </div>
+      </div> 
+      <div class="card-footer">
+        
+        <%= link_to "Editar", edit_auction_path(auction.id), :class => 'button-xs' %>
+           <%= link_to("Deletar Leilao", auction_path(auction.id), :method => :delete, :class => 'button-xs') %>
+      </div>
+    </div>
+</div>  
+<% end %>  
+
 <!-- 
 
 

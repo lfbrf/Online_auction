@@ -14,5 +14,7 @@
 # user.admin!
 # user.save!
 
- User.create_with(password: 'admin123', password_confirmation: 'admin123' , city: 'Guarapuava',
- 				  first_name: 'Admin', last_name: 'Surname', role: :admin).find_or_create_by(email: 'onlineauctionutfpr@gmail.com')
+ user = User.new(password: 'admin123', password_confirmation: 'admin123' , city: 'Guarapuava',
+ 				  first_name: 'Admin', last_name: 'Surname', role: :admin, email: 'onlineauctionutfpr@gmail.com');
+user.skip_confirmation!
+user.save!

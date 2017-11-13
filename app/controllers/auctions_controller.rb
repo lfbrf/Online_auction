@@ -13,6 +13,20 @@ class AuctionsController < ApplicationController
     @auction = Auction.find(params[:id])
   end
 
+  def edit
+    @auction = Auction.find(params[:id])
+  end
+
+  def update
+    @auction = Auction.find(params[:id])
+    if @auction.update_attributes(auction_params)
+       flash[:success] = "Leilao Atualizado"
+      redirect_to @auction
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @auction = Auction.new(auction_params)
 
@@ -22,7 +36,11 @@ class AuctionsController < ApplicationController
       render :new
     end
   end
-
+def destroy
+    auction = Auction.find(params[:id])
+    auction.destroy
+    redirect_to auction, :notice => "Leilao deletado."
+  end
   private
 
   def auction_params

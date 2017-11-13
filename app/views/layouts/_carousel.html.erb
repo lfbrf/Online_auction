@@ -1,29 +1,44 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
+  <p style="display: none"> <%=  cont = -1 %></p>
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-    <li data-target="#myCarousel" data-slide-to="4"></li>
+    
+     <% @auctions.each do |auction| %>
+     <% if(cont ==0) %>
+     <li data-target="#myCarousel" data-slide-to="<%= cont = cont + 1 %>" class="active"></li>
+     <% else %>
+    <li data-target="#myCarousel" data-slide-to= "<%= cont = cont + 1 %>"> </li>
+     <%end%>
+    <%end%>
+  
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
 
-    <div class="item active">
-      <img src="http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg" alt="Los Angeles">
-    </div>
+
     
     <% @auctions.each do |auction| %>
+    <% if(cont>0) %>
+     <div class="item active">
+     <%= image_tag(auction.image.url(:medium)) %>
+       <div class="carousel-caption">
+        <h3><%= auction.title %> </h3>
+      </div>
+      <p style="display: none"> <%= cont = 0 %> </p>
+    </div>  
+    <% else %> 
     <div class="item">
      <%= image_tag(auction.image.url(:medium)) %>
        <div class="carousel-caption">
         <h3><%= auction.title %> </h3>
-    </div>
+      </div>
+    </div>  
+    <% end %>
+    <%end%>
    </div>
   
-   <%end%>
+   
 
 </div>
 
@@ -37,3 +52,9 @@
   <span class="sr-only">Próximo</span>
 </a>
 </div>
+<script>
+$(document).ready(function () {
+  alert("OK");
+  $('#myCarousel').find('.item').first().addClass('active');
+});
+</script>

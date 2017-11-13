@@ -15,6 +15,25 @@ class ProductsController < ApplicationController
    @product = Product.find(params[:id]) 
   end 
 
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+       flash[:success] = "Produto Atualizado"
+      redirect_to @product
+    else
+      render 'edit'
+    end
+  end
+def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to product, :notice => "Produto deletado."
+  end
   def create   
     @product = Product.new(product_params)
     
