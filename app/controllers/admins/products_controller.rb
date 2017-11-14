@@ -1,4 +1,4 @@
-  class ProductsController < ApplicationController 
+  class Admins::ProductsController < Admins::BaseControlller
   before_action :admin_only
   
   def index

@@ -1,0 +1,64 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <p style="display: none"> <%=  cont = 0%></p>
+  <ol class="carousel-indicators">
+    
+     <% @auctions.each do |auction| %>
+     <% if(cont ==0) %>
+     <li data-target="#myCarousel" data-slide-to="<%= cont = cont + 1 %>" class="active"></li>
+     <% else %>
+    <li data-target="#myCarousel" data-slide-to= "<%= cont = cont + 1 %>"> </li>
+     <%end%>
+    <%end%>
+  
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+
+    
+    <% @auctions.each do |auction| %>
+    <% if(cont>0) %>
+     <div class="item active">
+    <%= link_to  visitor_path(@auction, :id=> auction.id) do %>
+     <%= image_tag(auction.image.url(:medium)) %>
+     <% end %>
+       <div class="carousel-caption">
+        <h3><%= auction.title %> </h3>
+      </div>
+      <p style="display: none"> <%= cont = 0 %> </p>
+    </div>  
+    <% else %> 
+    <div class="item">
+    <%= link_to  visitor_path(@auction, :id=> auction.id) do %>
+     <%= image_tag(auction.image.url(:medium)) %>
+     <% end %>
+       <div class="carousel-caption">
+        <h3><%= auction.title %> </h3>
+      </div>
+    </div>  
+    <% end %>
+    <%end%>
+   </div>
+  
+   
+
+</div>
+
+<!-- Left and right controls -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  <span class="sr-only">Anterior</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  <span class="sr-only">Próximo</span>
+</a>
+</div>
+<script>
+$(document).ready(function () {
+  alert("OK");
+  $('#myCarousel').find('.item').first().addClass('active');
+});
+</script>

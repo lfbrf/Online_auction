@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Online Auction" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Online Auction" %>">
+    <%= stylesheet_link_tag 'admins/application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'admins/application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'admins/layouts/navigation' %>
+    </header>
+    <main class="container-fluid" role="main">
+       <%= render 'admins/layouts/messages' %>
+       <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-class AuctionsController < ApplicationController
+class Admins::AuctionsController < Admins::BaseControlller
   before_action :admin_only
   
 

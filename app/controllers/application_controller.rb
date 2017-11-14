@@ -1,8 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  layout :layout_by_resource
   protected
+  def layout_by_resource
+    if devise_controller?
+      if resource_name == :user && ["edit", "update"].include?(action_name)
+        "users/layouts/application"
+      elsif resource_name == :admin
+        "admins/layouts/application"
+      else
+        "devise/sessions/new"
+      end
+    else
+      "layouts/application"
+    end
+  end
 
   def configure_permitted_parameters
   	
