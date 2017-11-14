@@ -1,9 +1,10 @@
 class AuctionsController < ApplicationController
   before_action :admin_only
+  
 
   def index
     @auctions = Auction.all
-  end
+  end 
 
   def new
     @auction = Auction.new
@@ -11,6 +12,7 @@ class AuctionsController < ApplicationController
 
   def show
     @auction = Auction.find(params[:id])
+    @products = Product.all
   end
 
   def edit

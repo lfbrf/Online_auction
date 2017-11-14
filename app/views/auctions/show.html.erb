@@ -1,21 +1,38 @@
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-	<div class="card">
-		<h4 class="card-title"><%=@auction.title %></h4>
-	    <%= image_tag(@auction.image.url(:medium), class: "card-img-top") %>
-	    <div class="card-block">
-	        
-	        
-	        <div class="card-text">
-	            <p> Início: <%= @auction.begin_date%> </p>
-	            <p> Fim: <%= @auction.begin_date%> </p>
-	            <span class="float-right">Qtde: </span>
-	            <span><i class=""></i>75 Itens</span>
+<div class="col-md-4">
+	
+		<div class="card">
+			<h4 class="card-title"><%=@auction.title %></h4>
+		    <%= image_tag(@auction.image.url(:medium), class: "card-img-top") %>
+		    <div class="card-block">
+		        
+		        
+		        <div class="card-text">
+		            <p> Início: <%= @auction.begin_date%> </p>
+		            <p> Fim: <%= @auction.begin_date%> </p>
+		            <span class="float-right">Qtde: </span>
+		            <span><i class=""></i>75 Itens</span>
+		        </div>
+		    </div>
+		    
+		    
+		    
+		    <div class="card-footer">
+		    	
+		    	<%= link_to "Editar", edit_auction_path(@auction), :class => 'button-xs' %>
+		         <%= link_to("Deletar Leilao", auction_path(@auction), :method => :delete, :class => 'button-xs') %>
+		    </div>
+		</div>
+</div>
+<div class="col-md-8" style="margin-top: 45px;">
+ 	  <% @products.each do |product| %>
+	        <% product.images.each do |image| %>
+	        <div class="col-md-3 col-sm-6 mb-4">
+	          <a href="#" >
+	          <%= link_to  product_path(product, :id=> product.id) do %>  
+	              <%= image_tag(image.url(:medium)) %>
+	           <% end %>   
+	          </a>
 	        </div>
-	    </div>
-	    <div class="card-footer">
-	    	
-	    	<%= link_to "Editar", edit_auction_path(@auction), :class => 'button-xs' %>
-	         <%= link_to("Deletar Leilao", auction_path(@auction), :method => :delete, :class => 'button-xs') %>
-	    </div>
-	</div>
-</div> 
+	        <% end %> 
+	        <% end %>
+</div>

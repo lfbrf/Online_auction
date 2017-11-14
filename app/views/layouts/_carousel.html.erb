@@ -1,6 +1,6 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <p style="display: none"> <%=  cont = -1 %></p>
+  <p style="display: none"> <%=  cont = 0%></p>
   <ol class="carousel-indicators">
     
      <% @auctions.each do |auction| %>
@@ -21,7 +21,9 @@
     <% @auctions.each do |auction| %>
     <% if(cont>0) %>
      <div class="item active">
+    <%= link_to  visitor_path(@auction, :id=> auction.id) do %>
      <%= image_tag(auction.image.url(:medium)) %>
+     <% end %>
        <div class="carousel-caption">
         <h3><%= auction.title %> </h3>
       </div>
@@ -29,7 +31,9 @@
     </div>  
     <% else %> 
     <div class="item">
+    <%= link_to  visitor_path(@auction, :id=> auction.id) do %>
      <%= image_tag(auction.image.url(:medium)) %>
+     <% end %>
        <div class="carousel-caption">
         <h3><%= auction.title %> </h3>
       </div>

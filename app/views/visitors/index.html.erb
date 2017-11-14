@@ -35,55 +35,18 @@
       <h3 class="my-4">Produtos em destaque</h3>
 
       <div class="row">
-
+      <% @auctions.each do |auction| %>
+        <% @products.each do |product| %>
+        <% product.images.each do |image| %>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          <a href="#">  
+              <%= image_tag(image.url(:medium)) %>
           </a>
         </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-
-  
-<% @auctions.each do |auction| %>
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4" style= "height: 600px; float: left !importnat; ">
-  <div class="card" >
-    <h4 class="card-title"> <%= auction.title%></h4>
-    <%= link_to  visitor_path(@auction, :id=> auction.id) do %>
-      <%= image_tag(auction.image.url(:medium), class: "card-img-top") %>
-    <% end %>   
-      <div class="card-block">
-           
-           
-          <div class="card-text">
-         
-          
-                <p> Início: <%= auction.begin_date%> </p>
-              <p> Fim: <%= auction.begin_date%> </p>
-              <p><% auction.products.each do |product| %>
-              <%= product.name  %>,
-          
-              <% end %></p>
-          </div>
-      </div> 
-    </div>
-</div>  
-<% end %>  
+        <% end %> 
+        <% end %>
+        <% end %>
+   
 
       </div>
       <!-- /.row -->
